@@ -15,9 +15,9 @@
 }
 
 .button-to-chase {
-  position: relative;
+  position: absolute;
   top: 30%;
-  left: 12%;
+  left: 15%;
   text-align: center;
   font-size: 16px;
   background-color: aqua;
