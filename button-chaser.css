@@ -4,21 +4,25 @@
 }
 
 .button-container {
-  position: relative;
+  position: sticky;
   left: 50%;
   top: 50%;
   border-color: rgb(137, 43, 226);
   border-width: 5px;
   border-style: solid;
-  height: 70px;
-  width: 120px;
+  height: 110px;
+  width: 140px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .button-to-chase {
-  position: absolute;
-  top: 30%;
-  left: 15%;
+  position: relative;
+  top: 30px;
+  left: 19px;
+  padding: 15px 15px;
   text-align: center;
   font-size: 16px;
   background-color: aqua;
+  border: none;
 }
