@@ -36,5 +36,4 @@ button.addEventListener("mouseover", function moveButton(event) {
         button.style.top = `${buttonPosY - 40}px`;
         return;
     }
-
 });
