@@ -1,6 +1,6 @@
 .project-container {
   width: auto;
-  height: 860px;
+  height: 990px;
 }
 
 .button-container {
@@ -8,15 +8,13 @@
   left: 50%;
   top: 50%;
   height: 110px;
-  width: 140px;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  width: 150px;
 }
 
 .button-to-chase {
   position: relative;
   top: 30px;
-  left: 19px;
+  left: 25px;
   padding: 15px 15px;
   text-align: center;
   font-size: 16px;
