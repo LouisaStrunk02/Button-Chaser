@@ -1,50 +1,67 @@
-function moveButton(classname) {
-    var buttonContainer = document.getElementsByClassName(classname)[0];
+var buttonContainer = document.getElementsByClassName("button-container")[0];
+var button = document.getElementsByClassName("button-to-chase")[0];
 
+buttonContainer.addEventListener("mouseover", function moveButton(event) {
     var mousePosX = event.clientX;
     var mousePosY = event.clientY;
-    const buttonPosX = buttonContainer.offsetLeft;
-    const buttonPosY = buttonContainer.offsetTop;
 
-    var mouseIsLeft = mousePosX <= buttonPosX;
-    var mouseIsRight = mousePosX >= buttonPosX;
-    var mouseIsUp = mousePosY <= buttonPosY;
-    var mouseIsDown = mousePosY >= buttonPosY;
+    var buttonHeight = button.offsetHeight;
+    var buttonWidth = button.offsetWidth;
 
-    var mouseIsLeftUp = mouseIsLeft && mouseIsUp;
-    var mouseIsRightUp = mouseIsRight && mouseIsUp;
-    var mouseIsLeftDown = mouseIsLeft && mouseIsDown;
-    var mouseIsRightDown = mouseIsRight && mouseIsDown;
+    var buttonLeft = buttonContainer.offsetLeft + button.offsetLeft;
+    var buttonRight = buttonLeft + buttonWidth;
+    var buttonTop = buttonContainer.offsetTop + button.offsetTop;
+    var buttonBottom = buttonTop + buttonHeight;
 
+    var mouseIsLeft = mousePosX <= buttonLeft && mousePosY >= buttonTop && mousePosY <= buttonBottom;
+    var mouseIsRight = mousePosX >= buttonRight && mousePosY >= buttonTop && mousePosY <= buttonBottom;
+    var mouseIsUp = mousePosX >= buttonLeft && mousePosX <= buttonRight && mousePosY <= buttonTop;
+    var mouseIsDown = mousePosX >= buttonLeft && mousePosX <= buttonRight && mousePosY >= buttonBottom;
+
+    var mouseIsLeftUp = mousePosX <= buttonLeft && mousePosY <= buttonTop;
+    var mouseIsRightUp = mousePosX >= buttonRight && mousePosY <= buttonTop;
+    var mouseIsLeftDown = mousePosX <= buttonLeft && mousePosY >= buttonBottom;
+    var mouseIsRightDown = mousePosX >= buttonRight && mousePosY >= buttonBottom;
+
+    if (mouseIsLeft) {
+        buttonContainer.style.left = `${buttonContainer.offsetLeft + 40}px`;
+        return;
+    }
+    if (mouseIsRight) {
+        buttonContainer.style.left = `${buttonContainer.offsetLeft - 40}px`;
+        return;
+    }
+    if (mouseIsUp) {
+        buttonContainer.style.top = `${buttonContainer.offsetTop + 40}px`;
+        return;
+    }
+    if (mouseIsDown) {
+        buttonContainer.style.top = `${buttonContainer.offsetTop - 40}px`;
+        return;
+    }
     if (mouseIsLeftUp) {
-        buttonContainer.style.left = `${buttonPosX + 40}px`;
-        buttonContainer.style.top = `${buttonPosY + 40}px`;
+        buttonContainer.style.left = `${buttonContainer.offsetLeft + 40}px`;
+        buttonContainer.style.top = `${buttonContainer.offsetTop + 40}px`;
         return;
     }
     if (mouseIsRightUp) {
-        buttonContainer.style.left = `${buttonPosX - 40}px`;
-        buttonContainer.style.top = `${buttonPosY + 40}px`;
+        buttonContainer.style.left = `${buttonContainer.offsetLeft - 40}px`;
+        buttonContainer.style.top = `${buttonContainer.offsetTop + 40}px`;
         return;
     }
     if (mouseIsLeftDown) {
-        buttonContainer.style.left = `${buttonPosX + 40}px`;
-        buttonContainer.style.top = `${buttonPosY - 40}px`;
+        buttonContainer.style.left = `${buttonContainer.offsetLeft + 40}px`;
+        buttonContainer.style.top = `${buttonContainer.offsetTop - 40}px`;
         return;
     }
     if (mouseIsRightDown) {
-        buttonContainer.style.left = `${buttonPosX - 40}px`;
-        buttonContainer.style.top = `${buttonPosY - 40}px`;
+        buttonContainer.style.left = `${buttonContainer.offsetLeft - 40}px`;
+        buttonContainer.style.top = `${buttonContainer.offsetTop - 40}px`;
         return;
     }
+});
 
-}
-
-function goToMiddle(classname) {
-    var button = document.getElementsByClassName(classname)[0];
-
-    button.style.left = `${document.body.offsetWidth / 2}px`;
-    button.style.top = `${document.body.offsetHeight / 2}px`;
-}
-
-document.getElementsByClassName("button-container")[0].onmouseover = () => moveButton("button-container");
-document.getElementsByClassName("button-to-chase")[0].onmouseover = () => goToMiddle("button-container");
+button.addEventListener("mouseover", function goToMiddle() {
+    buttonContainer.style.left = `${document.body.offsetWidth / 2}px`;
+    buttonContainer.style.top = `${document.body.offsetHeight / 2}px`;
+});
