@@ -7,9 +7,6 @@
   position: sticky;
   left: 50%;
   top: 50%;
-  border-color: rgb(137, 43, 226);
-  border-width: 5px;
-  border-style: solid;
   height: 110px;
   width: 140px;
   -ms-transform: translate(-50%, -50%);
