@@ -1,24 +1,23 @@
 .project-container {
-    width: auto;
-    height: 860px;
+  width: auto;
+  height: 990px;
 }
 
 .button-container {
-    position: relative;
-    left: 50%;
-    top: 50%;
-    border-color: rgb(137, 43, 226);
-    border-width: 5px;
-    border-style: solid;
-    height: 70px;
-    width: 120px;
+  position: sticky;
+  left: 50%;
+  top: 50%;
+  height: 110px;
+  width: 150px;
 }
 
 .button-to-chase {
-    position: absolute;
-    top: 30%;
-    left: 12%;
-    text-align: center;
-    font-size: 16px;
-    background-color: aqua;
+  position: relative;
+  top: 30px;
+  left: 25px;
+  padding: 15px 15px;
+  text-align: center;
+  font-size: 16px;
+  background-color: aqua;
+  border: none;
 }
