@@ -21,9 +21,9 @@ projectContainer.addEventListener("mousemove", function getDistance(event) {
     }
 
     var buttonIsTopLeft = button.offsetLeft <= (projectContainer.offsetLeft + border) && button.offsetTop <= (projectContainer.offsetTop + border);
-    var buttonIsTopRight = (button.offsetLeft + button.offsetWidth) >= (projectContainer.offsetTop + projectContainer.offsetWidth - border) && button.offsetTop <= (projectContainer.offsetTop + border);
-    var buttonIsBottomLeft = button.offsetLeft <= (projectContainer.offsetLeft + border) && (button.offsetTop + button.offsetHeight) >= (projectContainer.offsetTop + projectContainer.offsetHeight - border);
-    var buttonIsBottomRight = (button.offsetLeft + button.offsetWidth) >= (projectContainer.offsetTop + projectContainer.offsetWidth - border) && (button.offsetTop + button.offsetHeight) >= (projectContainer.offsetTop + projectContainer.offsetHeight - border);
+    var buttonIsTopRight = (button.offsetLeft + buttonWidth) >= (projectContainer.offsetTop + projectContainer.offsetWidth - border) && button.offsetTop <= (projectContainer.offsetTop + border);
+    var buttonIsBottomLeft = button.offsetLeft <= (projectContainer.offsetLeft + border) && (button.offsetTop + buttonHeight) >= (projectContainer.offsetTop + projectContainer.offsetHeight - border);
+    var buttonIsBottomRight = (button.offsetLeft + buttonWidth) >= (projectContainer.offsetTop + projectContainer.offsetWidth - border) && (button.offsetTop + buttonHeight) >= (projectContainer.offsetTop + projectContainer.offsetHeight - border);
 
     if (buttonIsTopLeft || buttonIsTopRight || buttonIsBottomLeft || buttonIsBottomRight) {
         button.style.left = `${document.body.offsetWidth / 2}px`;
