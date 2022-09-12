@@ -1,0 +1,6 @@
+{
+    "html.format.indentInnerHtml": true,
+    "html.format.preserveNewLines": true,
+    "html.validate.styles": true,
+    "html.format.enable": false
+}
