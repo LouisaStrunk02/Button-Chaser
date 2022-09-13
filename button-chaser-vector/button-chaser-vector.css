@@ -1,0 +1,16 @@
+.project-container {
+  width: auto;
+  height: 950px;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  border-width: 5px;
+}
+
+.button-to-chase {
+  position: sticky;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  font-size: 16px;
+  background-color: aqua;
+}
