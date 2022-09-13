@@ -60,3 +60,8 @@ buttonContainer.addEventListener("mouseover", function moveButton(event) {
         return;
     }
 });
+
+button.addEventListener("mouseover", function goToMiddle() {
+    buttonContainer.style.left = `${document.body.offsetWidth / 2}px`;
+    buttonContainer.style.top = `${document.body.offsetHeight / 2}px`;
+});
