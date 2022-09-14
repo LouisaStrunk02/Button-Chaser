@@ -1,13 +1,13 @@
 const projectContainer = document.getElementsByClassName("project-container")[0];
 const button = document.getElementsByClassName("button-to-chase")[0];
+const buttonHeight = button.offsetHeight;
+const buttonWidth = button.offsetWidth;
 const border = 5;
 
 projectContainer.addEventListener("mousemove", function getDistance(event) {
     var mouseX = event.clientX;
     var mouseY = event.clientY;
 
-    const buttonHeight = button.offsetHeight;
-    const buttonWidth = button.offsetWidth;
     var buttonX = button.offsetLeft + (buttonWidth / 2);
     var buttonY = button.offsetTop + (buttonHeight / 2);
     var vectorX = buttonX - mouseX;
